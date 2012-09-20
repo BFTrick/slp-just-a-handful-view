@@ -13,13 +13,16 @@ Copyright (C) 2012 Patrick Rauland
 
 class SLPJustAHandfulView
 {
+
 	public function __construct()
 	{
-		add_action( 'init', array( &$this, 'init' ) );
+		add_action( 'init', array( &$this, 'init' ), 2000 );
+		$this->theVariableIWant = $GLOBALS['theVariableIWant'];
 	}
 
 	public function init()
 	{
+			
 		//remove the search form
 		add_action('slp_render_search_form',array('SLPEnhancedSearch','slp_render_search_form'),9);
 
@@ -27,7 +30,8 @@ class SLPJustAHandfulView
 		add_filter('slp_javascript_results_string', array('SLPEnhancedResults','mangle_results_output'), 90);
 
 		//add styles & scripts
-		add_action( 'wp_enqueue_scripts', array( &$this, 'register_plugin_scripts' ), 100 );
+		add_action( 'wp_enqueue_scripts', array( &$this, 'register_plugin_scripts' ), 1000 );
+
 	}
 
 	public function register_plugin_scripts()

@@ -3,11 +3,6 @@
 	padding: 0;
 }
 
-/*hide the slp map credits*/
-#map_table .sl_footer{
-	display: none;
-}
-
 /*move the map & results structure around*/
 #map_table > tbody > tr{
 	display: block;
@@ -28,6 +23,6 @@
 #map_sidebar .jahv-extraInfo{
 	display: none;
 }
-	#map_sidebar .results_entry:hover > .jahv-extraInfo{
+	#map_sidebar .results_entry.jahv-selected > .jahv-extraInfo{
 		display: block;
 	}
