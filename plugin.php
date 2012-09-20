@@ -18,14 +18,28 @@ class SLPJustAHandfulView
 		add_action( 'init', array( &$this, 'init' ) );
 	}
 
-    public function init()
-    {
-        //remove the search form
-    	add_action('slp_render_search_form',array('SLPEnhancedSearch','slp_render_search_form'),9);
+	public function init()
+	{
+		//remove the search form
+		add_action('slp_render_search_form',array('SLPEnhancedSearch','slp_render_search_form'),9);
 
-    	// Search Functionality Hook
- 		add_filter('slp_javascript_results_string', array('SLPEnhancedResults','mangle_results_output'), 90);
-    }
+		//modify the results list
+		add_filter('slp_javascript_results_string', array('SLPEnhancedResults','mangle_results_output'), 90);
+
+		//add styles & scripts
+		add_action( 'wp_enqueue_scripts', array( &$this, 'register_plugin_scripts' ), 100 );
+	}
+
+	public function register_plugin_scripts()
+	{
+		//includes styles & scripts
+
+		//styles
+		wp_enqueue_style( 'slp-just-a-handful-view-styles', plugins_url( 'assets/css/style.css', __FILE__  ) );
+
+		//scripts
+		wp_enqueue_script('slp-just-a-handful-view-script', plugins_url(' assets/js/script.js', __FILE__ ), array('jquery'), false, true );
+	}
 }
 
 /**
@@ -54,11 +68,13 @@ Class SLPEnhancedSearch
 	function mangle_results_output($resultString) {
 
 		$locationListing = 
-		"{0} <br/>
-		{6} <br/>
-		{3} <br/>
-		{4} <br/>
-		{5}";
+		"{0}
+		<div class='jahv-extraInfo'>
+			{6} <br/>
+			{3}
+			{4}
+			{5}
+		</div>";
 		
 		return $locationListing;
 		
