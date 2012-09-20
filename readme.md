@@ -2,7 +2,7 @@
 
 ## Description
 
-Just a Handful View (JaHV) is an extension for [Store Locator Plus](http://www.cybersprocket.com/product/store-locator-plus/). This extension makes it very easy and convenient for users to create a store locator page that is optimized for websites that have a handful of stores. This extension features:
+Just a Handful View (JaHV) is an extension for [Store Locator Plus](http://www.charlestonsw.com/product/store-locator-plus/). This extension makes it very easy and convenient for users to create a store locator page that is optimized for websites that have a handful of stores. This extension features:
 
 * No search options, everything will appear on one screen
 * A consolidated view displaying the results panel right next to the map
