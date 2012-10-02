@@ -22,7 +22,10 @@ class SLPJustAHandfulView
 
 	public function init()
 	{
-			
+	
+		//give the user the ability to show or hide the search form in the backend
+		add_action('slp_add_searchform_features_setting', array('SLPEnhancedSearch','slp_add_search_form_feature_settings'), 9 );
+
 		//remove the search form
 		add_action('slp_render_search_form',array('SLPEnhancedSearch','slp_render_search_form'),9);
 
@@ -49,7 +52,7 @@ class SLPJustAHandfulView
 /**
  * Main SLP Enhanced Results Class
  */
-Class SLPEnhancedSearch 
+Class SLPEnhancedSearch2 
 {
 	/**
 	 * Method: slp_render_search_form
@@ -58,6 +61,35 @@ Class SLPEnhancedSearch
 	{
 		//remove the search form - we don't need that jazz
 		remove_action('slp_render_search_form',array('SLPlus_UI','slp_render_search_form'));
+	}
+
+	/**
+	* Method: slp_add_search_form_feature_settings
+	*
+	* Add new settings for the search for to the map settings/search form
+	* section.
+	*/
+	function slp_add_search_form_feature_settings() {
+		global $slpMapSettings;
+		?>
+		<div class='form_entry'>
+			
+			<label for='<?php echo $slpMapSettings->prefix; ?>-enhanced_search_hide_search_form'>
+			<?php _e('Hide Search Form', SLPLUS_PREFIX); ?>:
+			</label>
+			
+			<input name='<?php echo $slpMapSettings->prefix; ?>-enhanced_search_hide_search_form'
+			value='1'
+			type='checkbox'
+			<?php echo (
+			($slpMapSettings->get_item('enhanced_search_hide_search_form',0) === 1) ?
+			'checked' :
+			'');
+			?>
+			>
+		</div>
+		<?php
+		return;
 	}
 }
 
@@ -85,7 +117,12 @@ Class SLPEnhancedSearch
 	 }
  }
 
-//instantiate the plugin
+
+
+
+/**
+ * Initialize the plugin
+ */
 new SLPJustAHandfulView();
 
 //That's it! Thank you very much and good night.
