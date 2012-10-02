@@ -52,7 +52,7 @@ class SLPJustAHandfulView
 /**
  * Main SLP Enhanced Results Class
  */
-Class SLPEnhancedSearch2 
+Class SLPEnhancedSearch 
 {
 	/**
 	 * Method: slp_render_search_form
