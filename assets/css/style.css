@@ -20,9 +20,11 @@
 	}
 
 /*hide everything but the title in the results list*/
-#map_sidebar .jahv-extraInfo{
-	display: none;
+#map_sidebar{
 }
-	#map_sidebar .results_entry.jahv-selected > .jahv-extraInfo{
-		display: block;
+	#map_sidebar .jahv-extraInfo{
+		display: none;
 	}
+		#map_sidebar .results_entry.jahv-selected > .jahv-extraInfo{
+			display: block;
+		}
