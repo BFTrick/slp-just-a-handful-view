@@ -24,7 +24,7 @@ For right now you can override the CSS in your theme's style sheet. I plan on ad
 The arrow icon itself is actually a character from Font Awesome. This means that you can use CSS to style it with colors, drop shadows, hover effets, etc. The transition effect is created with the proprietary css 3 properties `transform` and `transition`. If you have a newer browser (ex. Chrome, Firefox, Safari, IE9)
 you should see the arrow flip upsidedown using CSS. If you don't have a fancy browser the arrow will probably just stay there. 
 
-If you would rather not have an icon at all you can hide it using the `____` selector. A possible feature in the future is to use Modernizer to detect if the browser can transform & transition. If it can show the fancy animation and if not then just swap out the icon for an upside down icon.
+If you would rather not have an icon at all you can hide it using the `#map_sidebar .results_entry > i` selector. A possible feature in the future is to use Modernizer to detect if the browser can transform & transition. If it can show the fancy animation and if not then just swap out the icon for an upside down icon.
 
 ## Copyright
 
