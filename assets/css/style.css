@@ -22,9 +22,30 @@
 /*hide everything but the title in the results list*/
 #map_sidebar{
 }
-	#map_sidebar .jahv-extraInfo{
-		display: none;
+	#map_sidebar .results_entry{
+		position: relative;
 	}
-		#map_sidebar .results_entry.jahv-selected > .jahv-extraInfo{
-			display: block;
+		#map_sidebar .results_entry .jahv-extraInfo{
+			display: none;
 		}
+			#map_sidebar .results_entry.jahv-selected > .jahv-extraInfo{
+				display: block;
+			}
+		#map_sidebar .results_entry > i{
+			font-size: 1.25em;
+			position: absolute;
+			top: 0em;
+			right: .5em;
+			-webkit-transition: all .5s ease-in-out;
+			-moz-transition: all .5s ease-in-out;
+			-ms-transition: all .5s ease-in-out;
+			-o-transition: all .5s ease-in-out;
+			transition: all .5s ease-in-out;
+		}
+			#map_sidebar .results_entry.jahv-selected > i{
+				-moz-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				-webkit-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				-o-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				-ms-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+				transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+			}

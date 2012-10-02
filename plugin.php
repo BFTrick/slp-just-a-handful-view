@@ -40,9 +40,13 @@ class SLPJustAHandfulView
 	public function register_plugin_scripts()
 	{
 		//includes styles & scripts
+		global $wp_styles;
 
 		//styles
 		wp_enqueue_style( 'slp-just-a-handful-view-styles', plugins_url( 'assets/css/style.css', __FILE__  ) );
+        wp_enqueue_style( 'font-awesome-styles', plugins_url( 'assets/css/font-awesome.css', __FILE__  ) );
+        wp_enqueue_style( 'font-awesome-ie7', plugins_url( 'assets/css/font-awesome-ie7.css', __FILE__ ), array(), '1.0', 'all'  );
+        $wp_styles->add_data( 'font-awesome-ie7', 'conditional', 'lte IE 7' );
 
 		//scripts
 		wp_enqueue_script('slp-just-a-handful-view-script', plugins_url(' assets/js/script.js', __FILE__ ), array('jquery'), false, true );
@@ -104,7 +108,8 @@ Class SLPEnhancedSearch
 	function mangle_results_output($resultString) {
 
 		$locationListing = 
-		"{0}
+		"<i class='icon-caret-up'></i>
+		{0}
 		<div class='jahv-extraInfo'>
 			{6} <br/>
 			{3}
