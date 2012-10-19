@@ -32,7 +32,8 @@
 				display: block;
 			}
 		#map_sidebar .results_entry > i{
-			font-size: 14px;
+			font-size: 10px;
+			font-style: normal;
 			position: absolute;
 			top: 0em;
 			right: .5em;
@@ -41,7 +42,7 @@
 			-ms-transition: all .5s ease-in-out;
 			-o-transition: all .5s ease-in-out;
 			transition: all .5s ease-in-out;
-			width: 9px;
+			width: 7px;
 		}
 			#map_sidebar .results_entry.jahv-selected > i{
 				-moz-transform: scale(1) rotate(180deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
