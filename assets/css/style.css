@@ -3,22 +3,6 @@
 	padding: 0;
 }
 
-/*move the map & results structure around*/
-#map_table > tbody > tr{
-	display: block;
-}
-	#map_table > tbody > tr > td {
-		display: block;
-	}
-	#map_table > tbody > tr:first-child{
-		float: right;
-		width: 70%;
-	}
-	#map_table > tbody > tr:first-child + tr{
-		float: left;
-		width: 30%;
-	}
-
 /*hide everything but the title in the results list*/
 #map_sidebar{
 }
